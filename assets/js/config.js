@@ -146,6 +146,18 @@ const ZORRO_CONFIG = {
       msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
       msg += `Please prepare a personalized day-wise itinerary and quote. Thank you!`;
       return msg;
+    },
+    generalContactDetail: (ref, data) => {
+      let msg = `*Quick Enquiry - ZORRO HOLIDAYS* 📩\n`;
+      msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
+      msg += `📌 *Enquiry Ref:* ${ref}\n`;
+      msg += `👤 *Name:* ${data.name}\n`;
+      msg += `📱 *Phone Number:* ${data.phone}\n`;
+      msg += `🏷️ *Enquiry About:* ${data.subject}\n`;
+      msg += `📝 *Message:* ${data.message}\n`;
+      msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
+      msg += `Please reply with details. Thank you!`;
+      return msg;
     }
   },
 

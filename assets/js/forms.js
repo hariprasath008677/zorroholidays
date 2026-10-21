@@ -613,6 +613,10 @@
 
       if (hasError) return;
 
+      const originalBtnContent = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Connecting to WhatsApp...';
+
       const ref = generateReference('CNT');
       const contactData = {
         ref: ref,
@@ -624,12 +628,27 @@
         submittedAt: new Date().toISOString()
       };
 
-      const existing = JSON.parse(localStorage.getItem(STORAGE_KEY_CONTACTS) || '[]');
-      existing.unshift(contactData);
-      localStorage.setItem(STORAGE_KEY_CONTACTS, JSON.stringify(existing));
+      try {
+        const existing = JSON.parse(localStorage.getItem(STORAGE_KEY_CONTACTS) || '[]');
+        existing.unshift(contactData);
+        localStorage.setItem(STORAGE_KEY_CONTACTS, JSON.stringify(existing));
+      } catch (err) {
+        console.error('Storage error:', err);
+      }
+
+      const whatsappMessage = window.ZORRO_CONFIG.messages.generalContactDetail(ref, contactData);
+      const whatsappLink = window.ZORRO_CONFIG.getWhatsAppUrl(whatsappMessage);
 
       contactForm.reset();
-      alert(`Thank you, ${contactData.name}! Your enquiry has been received (Ref: ${ref}). G.Naveen Kumar will connect with you on ${contactData.phone}.`);
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnContent;
+
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.location.href = whatsappLink;
+      } else {
+        window.open(whatsappLink, '_blank');
+      }
     });
   }
 
