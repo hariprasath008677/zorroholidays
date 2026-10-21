@@ -483,11 +483,23 @@
         existing.unshift(tripData);
         localStorage.setItem(STORAGE_KEY_TRIPS, JSON.stringify(existing));
 
+        // Generate WhatsApp enquiry message and open directly
+        const whatsappMessage = window.ZORRO_CONFIG.messages.customTripDetail(ref, tripData);
+        const whatsappLink = window.ZORRO_CONFIG.getWhatsAppUrl(whatsappMessage);
+
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalBtnText;
         tripForm.reset();
 
-        showTripConfirmationModal(tripData);
+        showTripConfirmationModal(tripData, whatsappLink);
+
+        // Open WhatsApp automatically
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        if (isMobile) {
+          window.location.href = whatsappLink;
+        } else {
+          window.open(whatsappLink, '_blank');
+        }
       } catch (err) {
         console.error('Trip form error:', err);
         submitBtn.disabled = false;
@@ -497,7 +509,7 @@
     });
   }
 
-  function showTripConfirmationModal(data) {
+  function showTripConfirmationModal(data, customWhatsappUrl) {
     let modal = document.getElementById('trip-confirmation-modal');
     if (!modal) {
       modal = document.createElement('div');
@@ -506,8 +518,7 @@
       document.body.appendChild(modal);
     }
 
-    const whatsappMessage = `Hello Naveen, I submitted custom trip enquiry [Ref: ${data.ref}]. Name: ${data.customerName}, Destination: ${data.destination} (${data.tourType}), Departure: ${data.departureDate}, Guests: ${data.adults} Adults, ${data.children} Children. Please share a personalized itinerary & quote.`;
-    const whatsappLink = window.ZORRO_CONFIG.getWhatsAppUrl(whatsappMessage);
+    const whatsappLink = customWhatsappUrl || (window.ZORRO_CONFIG ? window.ZORRO_CONFIG.getWhatsAppUrl(window.ZORRO_CONFIG.messages.customTripDetail(data.ref, data)) : '#');
 
     modal.innerHTML = `
       <div class="modal-content" style="max-width: 640px;">

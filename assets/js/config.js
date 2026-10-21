@@ -118,6 +118,34 @@ const ZORRO_CONFIG = {
       msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
       msg += `Please share current rate quote, KYC requirements, and availability in Coimbatore. Thank you!`;
       return msg;
+    },
+    customTripDetail: (ref, data) => {
+      let msg = `*Custom Trip Enquiry - ZORRO HOLIDAYS* 🌴\n`;
+      msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
+      msg += `📌 *Enquiry Ref:* ${ref}\n`;
+      msg += `👤 *Customer Name:* ${data.customerName}\n`;
+      msg += `📱 *Phone Number:* ${data.mobileNumber}\n`;
+      msg += `📍 *Destination:* ${data.destination} (${data.tourType || 'Custom Tour'})\n`;
+      msg += `📅 *Departure Date:* ${data.departureDate}\n`;
+      if (data.returnDate) {
+        msg += `🔄 *Return Date:* ${data.returnDate}\n`;
+      }
+      msg += `👥 *Guests:* ${data.adults} Adults${data.children && data.children !== '0' && data.children !== '0 Children' ? `, ${data.children} Children` : ''}\n`;
+      if (data.budget) {
+        msg += `💰 *Budget Category:* ${data.budget}\n`;
+      }
+      if (data.hotelPreference) {
+        msg += `🏨 *Accommodation Style:* ${data.hotelPreference}\n`;
+      }
+      if (data.foodPreference) {
+        msg += `🍽️ *Meals:* ${data.foodPreference}\n`;
+      }
+      if (data.specialRequests) {
+        msg += `📝 *Special Requests:* ${data.specialRequests}\n`;
+      }
+      msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
+      msg += `Please prepare a personalized day-wise itinerary and quote. Thank you!`;
+      return msg;
     }
   },
 
