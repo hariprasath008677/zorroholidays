@@ -1,13 +1,13 @@
 {
   "name": "zorro-holidays",
   "version": "1.0.0",
-  "description": "Official Website for ZORRO HOLIDAYS - Explore Beyond Limits. Coimbatore Call Taxi & Holiday Tours.",
+  "description": "Official Website for ZORRO HOLIDAYS - Explore Beyond Limits. Coimbatore Taxi Services & Holiday Tours.",
   "scripts": {
     "start": "npx -y serve . -l 3000",
     "dev": "npx -y serve . -l 3000"
   },
   "keywords": [
-    "coimbatore-call-taxi",
+    "coimbatore-taxi-services",
     "zorro-holidays",
     "ooty-tour",
     "munnar-package",
