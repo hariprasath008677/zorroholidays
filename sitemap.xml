@@ -1,44 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://zorroholidays.com/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://coimbatoretaxiservices.in/</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://zorroholidays.com/call-taxi.html</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://coimbatoretaxiservices.in/call-taxi.html</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://zorroholidays.com/domestic-tours.html</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://coimbatoretaxiservices.in/services.html</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://zorroholidays.com/international-tours.html</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://coimbatoretaxiservices.in/holiday-packages.html</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://zorroholidays.com/plan-trip.html</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://coimbatoretaxiservices.in/domestic-tours.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://coimbatoretaxiservices.in/international-tours.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://coimbatoretaxiservices.in/plan-trip.html</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zorroholidays.com/about.html</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://coimbatoretaxiservices.in/about.html</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zorroholidays.com/contact.html</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://coimbatoretaxiservices.in/contact.html</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
